@@ -1,25 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
 int main(int argc, char *argv[]) {
+	float sumaNotas, promedioCurso, nota;
+	int minAlumno, maxAlumno;
+	float promedioAlumno = 0;
+	float sumaPromedios = 0;
+	float menorPromedio = 11;
+	float mayorPromedio = 0;
 	int i, j;
-	int sumaNotas, promedioAlumno = 0, promedioCurso, sumaPromedios = 0;
-	int nota;
-	int mayorPromedio, menorPromedio, maxAlumno = 0, minAlumno = 11;
 	
 	for(i = 1; i <= 4; i++) {
 		sumaNotas = 0;
 		
 		for(j = 1; j <= 3; j++) {
 			printf("Ingrese la nota del alumno %d: ", i);
-			scanf("%d", &nota);
+			scanf("%f", &nota);
 			sumaNotas = sumaNotas + nota;
 		}
 		
 	promedioAlumno = sumaNotas / 3;
-	printf("El promedio del alumno es: %d.", promedioAlumno);
+	printf("El promedio del alumno es: %.2f. \n", promedioAlumno);
+	printf("\n");
 	
 	if (promedioAlumno > mayorPromedio) {
 		mayorPromedio = promedioAlumno;
@@ -35,10 +37,10 @@ int main(int argc, char *argv[]) {
 }
 
 promedioCurso = sumaPromedios / 4;
-printf("El promedio del curso es: %d. ", promedioCurso);
 
-printf("El alumno %d tiene el menor promedio con %d puntos. ", minAlumno, menorPromedio);
+printf("El promedio del curso es de %.2f puntos. \n", promedioCurso);
 
-printf("El alumno %d tiene el mayor promedio con %d puntos. ", maxAlumno, mayorPromedio);	
+printf("El alumno %d tiene el menor promedio con %.2f puntos. \n", minAlumno, menorPromedio);
+
+printf("El alumno %d tiene el mayor promedio con %.2f puntos. \n", maxAlumno, mayorPromedio);	
 }
-
